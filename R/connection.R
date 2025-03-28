@@ -54,11 +54,7 @@ build_conn <- function(dbname, driver_name) {
 
   tryCatch({
 
-    if (dbname=='ElmerGeo') {
-      server_name <- 'AWS-PROD-SQL\\Sockeye'
-    } else {
-      server_name <- 'SQLserver'
-    }
+    server_name <- 'SQLserver'
 
     if (is.windows()) {
       check_sql_driver(driver_name)
