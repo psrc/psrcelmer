@@ -10,7 +10,7 @@
 #' @return nothing
 #'
 #' @examples
-#' sql_qry = "UPDATE dbo.testtable SET field_a = 2 WHERE 1 != 1"
+#' sql_qry = "UPDATE  dbo.testtable SET field_a = 2 WHERE 1 != 1"
 #' sql_execute(sql=sql_qry, db_name='Elmer')
 #'
 #' @export
