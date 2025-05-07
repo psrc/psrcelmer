@@ -91,64 +91,86 @@ between SQL Server's data types and R's.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">st_read_elmergeo</span><span class="op">(</span><span class="st">"COUNTY_BACKGROUND"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 39 features and 7 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 39 features and 11 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POLYGON</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -124.8363 ymin: 45.54373 xmax: -116.9152 ymax: 49.00253</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> First 10 features:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    OBJECTID perimeter county_cod county_fip county_nm psrc SDE_STATE_ID</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1        23 1287929.0         38        075   Whitman    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2         3 1291742.0         10        019     Ferry    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3        26 1702496.0         39        077    Yakima    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4         6  601010.2         28        055  San Juan    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5        29  962960.1         11        021  Franklin    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6         9 1788454.0          4        007    Chelan    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7        15  631297.4         18        035    Kitsap    1            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8        32  796659.6          7        013  Columbia    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9        12 1197390.0         31        061 Snohomish    1            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10       35  416193.8         35        069 Wahkiakum    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             Shape</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  POLYGON ((-117.0403 47.2592...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  POLYGON ((-118.8366 49.0001...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  POLYGON ((-121.4076 47.0006...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  POLYGON ((-123.0084 48.8296...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  POLYGON ((-118.2102 46.7388...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  POLYGON ((-120.7021 48.5317...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  POLYGON ((-122.4983 47.9266...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  POLYGON ((-118.2286 46.5933...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  POLYGON ((-122.4583 48.2977...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 POLYGON ((-123.2184 46.3850...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    OBJECTID perimeter county_cod county_fip    county_nm psrc SDE_STATE_ID</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         1  983603.8         26        051 Pend Oreille    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         2 1603655.0         33        065      Stevens    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3         3 1291742.0         10        019        Ferry    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4         4 1497492.0         37        073      Whatcom    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         5 2046181.0         24        047     Okanogan    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6         6  601010.2         28        055     San Juan    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7         7 1340167.0         29        057       Skagit    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8         8 1357895.0          5        009      Clallam    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9         9 1788454.0          4        007       Chelan    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       10  568832.4         15        029       Island    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GlobalID created_user created_date</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  EBAD1EFA-835C-4239-B78F-788D60BEB5DB         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  019E4313-974E-4FAA-9992-FE1BEDEB5D6A         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  17F4C595-A5AB-4C66-A9D1-234F3AFCBC32         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  EEBF0354-6B1A-4945-92AA-ABF3A815F14F         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2EDD383C-5CD2-489E-99E8-384DDAC016A1         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  E900291A-E223-41E1-B3E5-3F7C035A2571         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  D41D22C9-95B7-4043-90BF-C44139862018         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  ABCB6C29-A5C9-48B3-BBBA-91FD0BBD376A         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  90AFC141-B254-42FD-B1E9-32DE8B30102F         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 7EF77CF7-BF8C-4BED-A050-4331839DFD19         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    last_edited_user                          Shape</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1              &lt;NA&gt; POLYGON ((-117.4295 49.0004...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2              &lt;NA&gt; POLYGON ((-118.0628 49.0001...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3              &lt;NA&gt; POLYGON ((-118.8366 49.0001...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4              &lt;NA&gt; POLYGON ((-123.0084 48.8296...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5              &lt;NA&gt; POLYGON ((-119.1579 49.0003...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6              &lt;NA&gt; POLYGON ((-123.0084 48.8296...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7              &lt;NA&gt; POLYGON ((-122.7138 48.6450...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8              &lt;NA&gt; POLYGON ((-123.2493 48.2841...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9              &lt;NA&gt; POLYGON ((-120.7021 48.5317...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10             &lt;NA&gt; POLYGON ((-122.7337 48.4130...</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">st_read_elmergeo</span><span class="op">(</span><span class="st">"COUNTY_BACKGROUND"</span>, project_to_wgs84 <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 39 features and 7 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 39 features and 11 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POLYGON</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: 664166.8 ymin: -527832.4 xmax: 2636448 ymax: 751796.4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Projected CRS: NAD83 / Washington North (ftUS)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> First 10 features:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    OBJECTID perimeter county_cod county_fip county_nm psrc SDE_STATE_ID</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1        23 1287929.0         38        075   Whitman    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2         3 1291742.0         10        019     Ferry    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3        26 1702496.0         39        077    Yakima    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4         6  601010.2         28        055  San Juan    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5        29  962960.1         11        021  Franklin    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6         9 1788454.0          4        007    Chelan    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7        15  631297.4         18        035    Kitsap    1            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8        32  796659.6          7        013  Columbia    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9        12 1197390.0         31        061 Snohomish    1            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10       35  416193.8         35        069 Wahkiakum    0            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             Shape</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  POLYGON ((2581969 117791.3,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  POLYGON ((2119733 735853.9,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  POLYGON ((1497107 772.0603,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  POLYGON ((1116546 674848.3,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  POLYGON ((2298154 -84060.12...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  POLYGON ((1672219 558791.7,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  POLYGON ((1232246 342417.9,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  POLYGON ((2295340 -137255.1...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  POLYGON ((1244905 477543.5,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 POLYGON ((1038351 -214998.9...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    OBJECTID perimeter county_cod county_fip    county_nm psrc SDE_STATE_ID</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         1  983603.8         26        051 Pend Oreille    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         2 1603655.0         33        065      Stevens    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3         3 1291742.0         10        019        Ferry    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4         4 1497492.0         37        073      Whatcom    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         5 2046181.0         24        047     Okanogan    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6         6  601010.2         28        055     San Juan    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7         7 1340167.0         29        057       Skagit    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8         8 1357895.0          5        009      Clallam    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9         9 1788454.0          4        007       Chelan    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       10  568832.4         15        029       Island    0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GlobalID created_user created_date</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  EBAD1EFA-835C-4239-B78F-788D60BEB5DB         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  019E4313-974E-4FAA-9992-FE1BEDEB5D6A         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  17F4C595-A5AB-4C66-A9D1-234F3AFCBC32         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  EEBF0354-6B1A-4945-92AA-ABF3A815F14F         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2EDD383C-5CD2-489E-99E8-384DDAC016A1         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  E900291A-E223-41E1-B3E5-3F7C035A2571         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  D41D22C9-95B7-4043-90BF-C44139862018         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  ABCB6C29-A5C9-48B3-BBBA-91FD0BBD376A         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  90AFC141-B254-42FD-B1E9-32DE8B30102F         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 7EF77CF7-BF8C-4BED-A050-4331839DFD19         &lt;NA&gt;         &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    last_edited_user                          Shape</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1              &lt;NA&gt; POLYGON ((2457331 747815.8,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2              &lt;NA&gt; POLYGON ((2305407 741615.1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3              &lt;NA&gt; POLYGON ((2119733 735853.9,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4              &lt;NA&gt; POLYGON ((1116546 674848.3,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5              &lt;NA&gt; POLYGON ((2042608 734081.5,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6              &lt;NA&gt; POLYGON ((1116546 674848.3,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7              &lt;NA&gt; POLYGON ((1185843 605649.2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8              &lt;NA&gt; POLYGON ((1052291 477665.4,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9              &lt;NA&gt; POLYGON ((1672219 558791.7,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10             &lt;NA&gt; POLYGON ((1178931 521135.8,...</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

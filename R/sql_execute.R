@@ -1,11 +1,17 @@
-#' send_query(db_name, sql)
+#' sql_execute(sql, db_name)
 #'
 #' Execute a SQL command to the database
 #'
 #' Intended for update, merge or other commands that do not retrieve records. For retrieval, use get_query.
 #'
-#' @param db_name String.  The name of the database to run the query against.  Should be "Elmer" or "ElmerGeo".  Default = "Elmer".
 #' @param sql String.  The SQL command to send to <db_name>.
+#' @param db_name String.  The name of the database to run the query against.  Should be "Elmer" or "ElmerGeo".  Default = "Elmer".
+#'
+#' @return nothing
+#'
+#' @examples
+#' sql_qry = "UPDATE dbo.testtable SET field_a = 2 WHERE 1 != 1"
+#' sql_execute(sql=sql_qry, db_name='Elmer')
 #'
 #' @export
 sql_execute <- function(sql, db_name='Elmer') {
@@ -16,10 +22,15 @@ sql_execute <- function(sql, db_name='Elmer') {
     DBI::dbDisconnect(conn)
     return(invisible(NULL))
   }, warning = function(w) {
-    print(glue::glue("A warning popped up in send__query: {w}"))
+    print(glue::glue("A warning popped up in sql_execute: {w}"))
   }, error = function(e) {
-    print(glue::glue("An error happened in send__query: {e}"))
+    print(glue::glue("An error happened in sql_execute: {e}"))
     stop(e)
+  }, finally = {
+    # Ensure connection is always closed, even if there's an error
+    if (!is.null(conn) && DBI::dbIsValid(conn)) {
+      DBI::dbDisconnect(conn)
+    }
   })
 }
 

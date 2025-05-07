@@ -2,7 +2,7 @@
 % Please edit documentation in R/sql_execute.R
 \name{sql_execute}
 \alias{sql_execute}
-\title{send_query(db_name, sql)}
+\title{sql_execute(sql, db_name)}
 \usage{
 sql_execute(sql, db_name = "Elmer")
 }
@@ -11,9 +11,17 @@ sql_execute(sql, db_name = "Elmer")
 
 \item{db_name}{String.  The name of the database to run the query against.  Should be "Elmer" or "ElmerGeo".  Default = "Elmer".}
 }
+\value{
+nothing
+}
 \description{
 Execute a SQL command to the database
 }
 \details{
 Intended for update, merge or other commands that do not retrieve records. For retrieval, use get_query.
+}
+\examples{
+sql_qry = "UPDATE dbo.testtable SET field_a = 2 WHERE 1 != 1"
+sql_execute(sql=sql_qry, db_name='Elmer')
+
 }

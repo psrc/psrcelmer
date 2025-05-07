@@ -25,6 +25,9 @@
     <loc>https://psrc.github.io/psrcelmer/index.html</loc>
   </url>
   <url>
+    <loc>https://psrc.github.io/psrcelmer/LICENSE-text.html</loc>
+  </url>
+  <url>
     <loc>https://psrc.github.io/psrcelmer/reference/get_query.html</loc>
   </url>
   <url>
@@ -43,6 +46,18 @@
     <loc>https://psrc.github.io/psrcelmer/reference/psrcelmer.html</loc>
   </url>
   <url>
+    <loc>https://psrc.github.io/psrcelmer/reference/sql_execute.html</loc>
+  </url>
+  <url>
+    <loc>https://psrc.github.io/psrcelmer/reference/sql_execute_bak.html</loc>
+  </url>
+  <url>
+    <loc>https://psrc.github.io/psrcelmer/reference/stage_table.html</loc>
+  </url>
+  <url>
     <loc>https://psrc.github.io/psrcelmer/reference/st_read_elmergeo.html</loc>
+  </url>
+  <url>
+    <loc>https://psrc.github.io/psrcelmer/reference/st_read_query.html</loc>
   </url>
 </urlset>
