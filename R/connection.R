@@ -72,7 +72,8 @@ build_conn <- function(dbname, driver_name) {
                              server = server_name,
                              database = dbname,
                              uid = auth$uid,
-                             pwd = auth$pwd)
+                             pwd = auth$pwd,
+                             Encrypt = "no")
     } else {
       auth <- get_auth()
       check_sql_driver(driver_name)
