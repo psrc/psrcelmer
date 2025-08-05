@@ -65,7 +65,7 @@ build_conn <- function(dbname, driver_name) {
                              trusted_connection = "yes")
     } else if (is.linux())  {
       auth <- get_auth()
-      driver_name = 'SQL Server'
+      driver_name = 'ODBC Driver 18 for SQL Server'
       check_sql_driver(driver_name)
       conn <- DBI::dbConnect(odbc::odbc(),
                              driver = driver_name,
