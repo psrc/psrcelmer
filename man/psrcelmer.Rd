@@ -2,8 +2,8 @@
 % Please edit documentation in R/psrcelmer.R
 \docType{package}
 \name{psrcelmer}
-\alias{psrcelmer}
 \alias{psrcelmer-package}
+\alias{psrcelmer}
 \title{psrcelmer: A package for easy retrieval of data from PSRC's databases Elmer and ElmerGeo}
 \description{
 Provides streamlined methods to retrieve data from PSRC's databases Elmer and ElmerGeo.

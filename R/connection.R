@@ -103,5 +103,6 @@ get_conn <- function(dbname='ElmerGeo') {
     print(glue::glue("A warning popped up in get_conn: {w}"))
   }, error = function(e) {
     print(glue::glue("An error happened in get_conn: {e}"))
+    stop(e)
   })
 }
