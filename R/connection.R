@@ -62,7 +62,8 @@ build_conn <- function(dbname, driver_name) {
                              driver = driver_name,
                              server = server_name,
                              database = dbname,
-                             trusted_connection = "yes")
+                             trusted_connection = "yes",
+                             TrustServerCertificate = "Yes")
     } else if (is.linux())  {
       auth <- get_auth()
       driver_name = 'ODBC Driver 18 for SQL Server'
@@ -96,7 +97,7 @@ build_conn <- function(dbname, driver_name) {
 get_conn <- function(dbname='ElmerGeo') {
 
   tryCatch({
-    driver_name = 'ODBC Driver 17 for SQL Server'
+    driver_name = 'ODBC Driver 18 for SQL Server'
     conn <- build_conn(dbname, driver_name)
     return(conn)
   }, warning = function(w) {
